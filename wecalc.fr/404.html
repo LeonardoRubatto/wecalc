@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="">
+<head>
+<script>(function(){var t=localStorage.getItem('theme');if(t==='dark'){document.documentElement.setAttribute('data-theme','dark');}})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page introuvable — wecalc.fr</title>
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="favicon.png">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --accent: #1E3A5F; --accent-light: #EBF1F8; --accent-mid: #314E72;
+  --champagne: #C8B27D; --champ-light: #f5f0e8;
+  --body-bg: #F7F8F6; --mineral: #D9DEE5; --white: #FFFFFF;
+  --slate: #6B7A8C; --gray-100: #F3F4F6; --gray-200: #E5E7EB;
+  --gray-700: #374151; --gray-900: #111827;
+  --font-main: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --transition: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --radius: 14px; --radius-sm: 8px;
+}
+[data-theme="dark"] {
+  --body-bg: #080e18; --white: #0f172a; --gray-100: #1e2a3a; --gray-200: #2a3748;
+  --mineral: #2a3748; --gray-700: #d6dde6; --gray-900: #f0f4f8;
+  --slate: #b8c2cf; --accent-light: #0f1e30; --champ-light: #1e1a10;
+}
+[data-theme="dark"] body { background: var(--body-bg); color: var(--gray-900); }
+[data-theme="dark"] .site-header { background: rgba(8,14,24,0.97); border-bottom-color: var(--gray-200); }
+[data-theme="dark"] .theme-btn { background: #1e2a3a; }
+[data-theme="dark"] .calc-link { background: var(--white); border-color: var(--gray-200); }
+body { font-family: var(--font-main); background: var(--body-bg); color: var(--gray-900); -webkit-font-smoothing: antialiased; min-height: 100vh; display: flex; flex-direction: column; }
+a { text-decoration: none; color: inherit; }
+:focus-visible { outline: 2px solid var(--champagne); outline-offset: 3px; border-radius: 4px; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; } }
+.site-header { background: rgba(247,248,246,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--mineral); }
+.header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; gap: 16px; }
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo-img { width: 36px; height: 36px; }
+.logo-name { font-size: 16px; font-weight: 800; color: var(--accent); letter-spacing: -0.03em; }
+.logo-name span { color: var(--champagne); }
+.theme-btn { margin-left: auto; width: 36px; height: 36px; border-radius: 10px; border: 1px solid var(--mineral); background: var(--white); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all var(--transition); }
+.theme-btn:hover { border-color: var(--accent); background: var(--accent-light); }
+.ui-icon { display: flex; align-items: center; justify-content: center; }
+main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 60px 24px; }
+.error-wrap { text-align: center; max-width: 560px; }
+.error-code { font-size: 120px; font-weight: 800; color: var(--mineral); letter-spacing: -0.06em; line-height: 1; margin-bottom: 8px; }
+.error-title { font-size: 28px; font-weight: 800; color: var(--gray-900); letter-spacing: -0.02em; margin-bottom: 12px; }
+.error-sub { font-size: 16px; color: var(--slate); margin-bottom: 40px; line-height: 1.6; }
+.btn-home { display: inline-block; padding: 12px 28px; background: var(--accent); color: #fff; border-radius: var(--radius-sm); font-size: 14px; font-weight: 700; transition: background var(--transition); margin-bottom: 48px; }
+.btn-home:hover { background: var(--accent-mid); }
+.calcs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; text-align: left; }
+.calc-link { display: block; background: var(--white); border: 1px solid var(--mineral); border-radius: var(--radius-sm); padding: 14px 18px; transition: all var(--transition); }
+.calc-link:hover { border-color: var(--accent); transform: translateY(-1px); }
+.calc-link-name { font-size: 14px; font-weight: 700; color: var(--gray-900); margin-bottom: 2px; }
+.calc-link-desc { font-size: 12px; color: var(--slate); }
+h2.calcs-title { font-size: 13px; font-weight: 700; color: var(--slate); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px; text-align: left; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo" aria-label="wecalc.fr — accueil">
+      <img src="assets/icons/logo-fibo4.svg" width="36" height="36" alt="wecalc.fr logo" class="logo-img">
+      <div class="logo-name">we<span>calc</span>.fr</div>
+    </a>
+    <button class="theme-btn" onclick="toggleTheme()" aria-label="Basculer le thème">
+      <span id="themeIcon" class="ui-icon" data-icon="theme-dark.svg" aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+<main>
+  <div class="error-wrap">
+    <div class="error-code" aria-hidden="true">404</div>
+    <h1 class="error-title">Page introuvable</h1>
+    <p class="error-sub">Cette page n'existe pas ou a été déplacée.<br>Retrouvez tous nos calculateurs gratuits :</p>
+    <a href="/" class="btn-home">← Retour à l'accueil</a>
+    <h2 class="calcs-title">Nos calculateurs</h2>
+    <div class="calcs-grid">
+      <a href="https://salaire.wecalc.fr" class="calc-link" rel="noopener noreferrer"><div class="calc-link-name">Coût salarié</div><div class="calc-link-desc">Charges patronales, coût réel</div></a>
+      <a href="https://tva.wecalc.fr" class="calc-link" rel="noopener noreferrer"><div class="calc-link-name">Calculateur TVA</div><div class="calc-link-desc">HT ↔ TTC, 4 taux 2026</div></a>
+      <a href="https://marge.wecalc.fr" class="calc-link" rel="noopener noreferrer"><div class="calc-link-name">Calculateur Marge</div><div class="calc-link-desc">Marge brute, taux de marque</div></a>
+      <a href="https://equations.wecalc.fr" class="calc-link" rel="noopener noreferrer"><div class="calc-link-name">CalcEquation</div><div class="calc-link-desc">Équations 2nd et 3ème degré</div></a>
+      <a href="https://bac.wecalc.fr" class="calc-link" rel="noopener noreferrer"><div class="calc-link-name">Simulateur Bac</div><div class="calc-link-desc">Moyenne bac 2026–2027</div></a>
+      <a href="https://mesures.wecalc.fr" class="calc-link" rel="noopener noreferrer"><div class="calc-link-name">Convertisseur Mesures</div><div class="calc-link-desc">12 catégories d'unités</div></a>
+      <a href="https://imc.wecalc.fr" class="calc-link" rel="noopener noreferrer"><div class="calc-link-name">Calculateur IMC</div><div class="calc-link-desc">IMC adulte + pédiatrique</div></a>
+    </div>
+  </div>
+</main>
+<script>
+var ICONS = { 'theme-dark.svg': 'assets/icons/theme-dark.svg', 'theme-light.svg': 'assets/icons/theme-light.svg' };
+function toggleTheme() {
+  var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  document.documentElement.setAttribute('data-theme', isDark ? '' : 'dark');
+  localStorage.setItem('theme', isDark ? 'light' : 'dark');
+  updateThemeIcon();
+}
+function updateThemeIcon() {
+  var icon = document.getElementById('themeIcon');
+  if (!icon) return;
+  var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  icon.setAttribute('data-icon', isDark ? 'theme-light.svg' : 'theme-dark.svg');
+  hydrateIcons();
+}
+function hydrateIcons() {
+  document.querySelectorAll('[data-icon]').forEach(function(el) {
+    var name = el.getAttribute('data-icon');
+    var path = ICONS[name];
+    if (!path) return;
+    el.innerHTML = '<img src="' + path + '" alt="" width="16" height="16" aria-hidden="true">';
+  });
+}
+document.addEventListener('DOMContentLoaded', function() { updateThemeIcon(); hydrateIcons(); });
+</script>
+</body>
+</html>
