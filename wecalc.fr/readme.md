@@ -66,3 +66,4 @@ Output directory : `/` (racine)
 
 - Vérification annuelle recommandée (taux TVA, barèmes URSSAF, coefficients bac)
 - Prochaine vérification : janvier 2027
+
